@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Perangkat IoT</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; max-width: 350px; }
+        h2 { text-align: center; color: #333; margin-bottom: 20px; font-size: 22px; }
+        label { font-weight: bold; color: #555; font-size: 14px; }
+        input[type="text"], input[type="password"] { width: 100%; padding: 10px; margin: 8px 0 20px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; background-color: #4CAF50; color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; transition: 0.3s; }
+        button:hover { background-color: #45a049; }
+        .info { text-align: center; font-size: 12px; color: #888; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>⚙️ Konfigurasi Jaringan</h2>
+        
+        <!-- Formulir dengan metode POST yang akan ditangkap ESP32 -->
+        <form action="/simpan" method="POST">
+            
+            <label for="namawifi">Nama WiFi (SSID)</label>
+            <input type="text" id="namawifi" name="namawifi" placeholder="Masukkan nama WiFi..." required>
+            
+            <label for="sandi">Password WiFi</label>
+            <input type="password" id="sandi" name="sandi" placeholder="Masukkan password..." required>
+            
+            <button type="submit">Simpan & Mulai Ulang</button>
+        </form>
+
+        <div class="info">Sistem akan otomatis restart setelah disimpan.</div>
+    </div>
+
+</body>
+</html>
